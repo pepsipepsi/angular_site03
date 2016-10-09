@@ -1,0 +1,10 @@
+<h2>{{title}}</h2>
+<ul class="heroes">
+  <li *ngFor="let article of articleService.articles"
+    [class.selected]="article === articleService.selectedArticle"
+    (click)="onSelect(article)">
+    <a [routerLink]="['/articles', article.name]">{{article.title}}</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

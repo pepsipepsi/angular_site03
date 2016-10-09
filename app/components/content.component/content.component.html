@@ -1,0 +1,7 @@
+<script src="bower_components/markdown-it/dist/markdown-it.js"></script>
+
+<div *ngIf="articleService.selectedArticle">
+<img id="header-image" src="{{articleService.selectedArticle.img}}" alt="{{articleService.selectedArticle.img_alt}}">
+<h2>{{articleService.selectedArticle.title}}</h2>
+</div>
+<div id="myElement" [innerHTML]="this.articleService.content | markdown"></div>
